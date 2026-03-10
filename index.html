@@ -94,6 +94,11 @@
     </section>
 
     <script>
+
+    fetch(`${BACKEND_URL}/api/session-data`, { credentials: 'include' })
+      .then(response => response.json())
+      .then(data => {
+      
     function openExercise(muscle) {
         window.location.href = `/exercise?muscle=${muscle}`;
     }
@@ -129,6 +134,7 @@
         .catch(error => {
             console.error('Error fetching session data:', error);
         });
+});
 });
     </script>
 
