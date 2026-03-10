@@ -95,9 +95,7 @@
 
     <script>
 
-    fetch(`${BACKEND_URL}/api/session-data`, { credentials: 'include' })
-      .then(response => response.json())
-      .then(data => {
+      const BACKEND_URL = "https://manga-muscle-backend-production.up.railway.app";
       
     function openExercise(muscle) {
         window.location.href = `/exercise?muscle=${muscle}`;
@@ -105,7 +103,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
     //using fetch to get the last muscle group from  server session
-    fetch('/api/session-data')
+    fetch(`${BACKEND_URL}/api/session-data`, {credentials : "include"} )
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -134,7 +132,6 @@
         .catch(error => {
             console.error('Error fetching session data:', error);
         });
-});
 });
     </script>
 
