@@ -217,6 +217,15 @@
 
     <script>
 
+        const response = await fetch(`manga-muscle-backend-production.up.railway.app/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+            credentials: 'include'
+        });
+
         function displayMessage(text, type = 'info') {
             const messageElement = document.getElementById('message');
             messageElement.textContent = text;
